@@ -1,9 +1,11 @@
 import React from 'react';
-import {Button, StatusBar, View} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import {MainStackParamList} from 'navigation/MainStackNavigator';
 import {colors, styles} from 'themes';
+import Card from 'components/Card';
+import {images} from 'assets';
 
 type HomeScreenNavigationProp = StackNavigationProp<MainStackParamList, 'Home'>;
 
@@ -15,29 +17,29 @@ export default function Home({navigation}: Props) {
   return (
     <View style={styles.flexCenter}>
       <StatusBar barStyle="light-content" backgroundColor={colors.darkBlue} />
-      <Button
-        onPress={() =>
-          navigation.navigate('WebView', {
-            url: 'http://mjwebhackslive.herokuapp.com/football',
-          })
-        }
-        title="Live Matches"
+      <Card
+        category={'Live Matches'}
+        detailedcategory={'Live Sports Events'}
+        backgroundimg={images.livematch}
+        icon={images.liveicon}
+        url="https://mjwebhacks.com"
+        navigation={navigation}
       />
-      <Button
-        onPress={() =>
-          navigation.navigate('WebView', {
-            url: 'http://mjwebhackslive.herokuapp.com/channels',
-          })
-        }
-        title="Channels"
+      <Card
+        category={'Channels'}
+        detailedcategory={'Live TV Channels'}
+        backgroundimg={images.channelimg}
+        icon={images.channelicon}
+        url="http://mjwebhackslive.herokuapp.com/channels"
+        navigation={navigation}
       />
-      <Button
-        onPress={() =>
-          navigation.navigate('WebView', {
-            url: 'http://mjwebhackslive.herokuapp.com/movies',
-          })
-        }
-        title="Latest Movies and Web Series"
+      <Card
+        category={'Latest Movies and Webseries'}
+        detailedcategory={'Movies and Webseries | Live now'}
+        backgroundimg={images.latestmoviesimg}
+        icon={images.latestmoviesicon}
+        url="http://mjwebhackslive.herokuapp.com/movies"
+        navigation={navigation}
       />
     </View>
   );

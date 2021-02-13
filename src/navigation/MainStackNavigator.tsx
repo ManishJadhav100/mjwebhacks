@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
+import SplashScreen from 'react-native-splash-screen';
 
 import {HomeScreen, WebViewScreen} from 'screens';
 import {colors} from 'themes';
@@ -14,6 +15,13 @@ export type MainStackParamList = {
 const MainStack = createStackNavigator<MainStackParamList>();
 
 export default function MainStackNavigator() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <MainStack.Navigator
       screenOptions={{
