@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, View, Text} from 'react-native';
+import {Button, StatusBar, View} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import {MainStackParamList} from 'navigation/MainStackNavigator';
-import {styles} from 'themes';
+import {colors, styles} from 'themes';
 
 type HomeScreenNavigationProp = StackNavigationProp<MainStackParamList, 'Home'>;
 
@@ -14,10 +14,30 @@ type Props = {
 export default function Home({navigation}: Props) {
   return (
     <View style={styles.flexCenter}>
-      <Text>Home Screen</Text>
+      <StatusBar barStyle="light-content" backgroundColor={colors.darkBlue} />
       <Button
-        onPress={() => navigation.navigate('WebView')}
-        title="Open WebView"
+        onPress={() =>
+          navigation.navigate('WebView', {
+            url: 'http://mjwebhackslive.herokuapp.com/football',
+          })
+        }
+        title="Live Matches"
+      />
+      <Button
+        onPress={() =>
+          navigation.navigate('WebView', {
+            url: 'http://mjwebhackslive.herokuapp.com/channels',
+          })
+        }
+        title="Channels"
+      />
+      <Button
+        onPress={() =>
+          navigation.navigate('WebView', {
+            url: 'http://mjwebhackslive.herokuapp.com/movies',
+          })
+        }
+        title="Latest Movies and Web Series"
       />
     </View>
   );

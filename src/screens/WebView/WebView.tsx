@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {styles} from 'themes';
+import {WebView} from 'react-native-webview';
+import {StackScreenProps} from '@react-navigation/stack';
 
-export default function WebView() {
-  return (
-    <View style={styles.flexCenter}>
-      <Text>WebView Screen</Text>
-    </View>
-  );
+import {MainStackParamList} from 'navigation/MainStackNavigator';
+
+type Props = StackScreenProps<MainStackParamList, 'WebView'>;
+
+export default function Webview({route}: Props) {
+  return <WebView source={{uri: route.params.url}} />;
 }

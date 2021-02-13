@@ -1,1 +1,3 @@
-export default {};
+export default {
+  logo: require('./logo.png'),
+};
