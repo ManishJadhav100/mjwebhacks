@@ -4,6 +4,7 @@ const colors = {
   secondaryBlack: '#444',
   secondaryGray: '#fafafa',
   white: '#fff',
+  darkBlue: '#2B2E59',
 };
 
 const defaultTheme = {
