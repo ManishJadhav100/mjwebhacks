@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
-import {Image, StyleSheet} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { useEffect } from 'react';
+import { Image, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from 'react-native-splash-screen';
 
-import {HomeScreen, WebViewScreen} from 'screens';
-import {colors} from 'themes';
-import {images} from 'assets';
+import { HomeScreen, WebViewScreen } from 'screens';
+import { colors } from 'themes';
+import { images } from 'assets';
 
 export type MainStackParamList = {
   Home: undefined;
-  WebView: {url: string};
+  WebView: { url: string };
 };
 
 const MainStack = createStackNavigator<MainStackParamList>();
@@ -43,7 +43,7 @@ export default function MainStackNavigator() {
       <MainStack.Screen
         name="WebView"
         component={WebViewScreen}
-        options={{headerTitle: ''}}
+        options={{ headerTitle: '' }}
       />
     </MainStack.Navigator>
   );
