@@ -14,13 +14,13 @@ type Props = {
 };
 
 type itemProps = {
-  category: string,
-  detailedcategory: string,
-  backgroundimg: string,
-  icon: string,
-  url: string,
-  navigation?: any
-}
+  category: string;
+  detailedcategory: string;
+  backgroundimg: string;
+  icon: string;
+  url: string;
+  navigation?: any;
+};
 
 const data = [
   {
@@ -28,35 +28,34 @@ const data = [
     detailedcategory: 'Live Sports Events',
     backgroundimg: images.livematch,
     icon: images.liveicon,
-    url: 'https://mjwebhackslive.herokuapp.com/football'
+    url: 'https://mjwebhackslive.herokuapp.com/football',
   },
   {
     category: 'Channels',
     detailedcategory: 'Live TV Channels',
     backgroundimg: images.channelimg,
     icon: images.channelicon,
-    url: 'https://mjwebhackslive.herokuapp.com/channels'
+    url: 'https://mjwebhackslive.herokuapp.com/channels',
   },
   {
     category: 'Latest Movies and Web Series',
     detailedcategory: 'Movies and Webseries | Live now',
     backgroundimg: images.latestmoviesimg,
     icon: images.latestmoviesicon,
-    url: 'https://mjwebhackslive.herokuapp.com/movies'
+    url: 'https://mjwebhackslive.herokuapp.com/movies',
   },
   {
     category: 'Courses',
     detailedcategory: 'Online Digital Courses',
     backgroundimg: images.courses,
     icon: images.channelicon,
-    url: 'https://mjwebhacks.com/courses'
+    url: 'https://mjwebhacks.com/courses',
   },
-]
+];
 
 export default function Home({ navigation }: Props) {
-
   function keyExtractor(item: itemProps) {
-    return item.category
+    return item.category;
   }
 
   function renderItem({ item }: { item: itemProps }) {
@@ -69,7 +68,7 @@ export default function Home({ navigation }: Props) {
         url={item.url}
         navigation={navigation}
       />
-    )
+    );
   }
 
   return (

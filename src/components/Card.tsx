@@ -14,7 +14,6 @@ type Props = {
 };
 
 const Card = (props: Props) => {
-
   function openWebView() {
     props.navigation.navigate('WebView', { url: props.url });
   }
@@ -22,7 +21,11 @@ const Card = (props: Props) => {
   return (
     <Pressable onPress={openWebView}>
       <View style={styles.mainview}>
-        <Image style={styles.imagebig} source={props.backgroundimg} resizeMode='stretch' />
+        <Image
+          style={styles.imagebig}
+          source={props.backgroundimg}
+          resizeMode="stretch"
+        />
         <View style={styles.subview}>
           <LinearGradient
             start={{ x: 0, y: 0 }}
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: hp(2),
     borderRadius: 16,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   imagebig: {
     width: wp(80),
